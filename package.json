@@ -1,0 +1,22 @@
+{
+  "name": "serup",
+  "version": "1.0.0",
+  "description": "Keep my servers up all the time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JAAKKQ/Serup.git"
+  },
+  "author": "Jaakko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JAAKKQ/Serup/issues"
+  },
+  "homepage": "https://github.com/JAAKKQ/Serup#readme",
+  "dependencies": {
+    "serialport": "^10.4.0"
+  }
+}

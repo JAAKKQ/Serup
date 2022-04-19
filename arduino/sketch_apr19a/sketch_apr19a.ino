@@ -1,6 +1,5 @@
+int Relay = 3; //Pin where relay is set
 bool IsServerResolved =  true;
-int Relay = 3;
-String inData = "";
 
 void PowerTimeout() {
   if (IsServerResolved == false) {
@@ -20,6 +19,7 @@ void Serup() {
   bool IsInit = true;
   if (IsInit == true) {
     IsInit = false;
+    bool IsServerResolved =  true;
     PowerTimeout();
   } else {
     IsServerResolved = true;
@@ -28,18 +28,16 @@ void Serup() {
 
 void setup()
 {
-  pinMode(13, OUTPUT);         //Set Pin13 as output
-  digitalWrite(13, HIGH);     //Set Pin13 High
   pinMode(Relay, OUTPUT);     //Set Pin3 as output
+  Serial.begin(9600); // Starts the serial communication
 }
 
 void loop() {
   while (Serial.available() > 0) {
     char received = Serial.read();
-    inData.concat(received);
 
-    // Process message when new line character is received
-    if (received == '\n') {
+    //Reset server power timeout if r is received.
+    if (received == 'r') {
       Serup();
     }
   }
