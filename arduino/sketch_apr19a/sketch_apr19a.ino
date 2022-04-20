@@ -19,7 +19,7 @@ void Serup() {
   bool IsInit = true;
   if (IsInit == true) {
     IsInit = false;
-    bool IsServerResolved =  true;
+    IsServerResolved =  true;
     PowerTimeout();
   } else {
     IsServerResolved = true;

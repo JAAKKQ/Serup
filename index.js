@@ -1,22 +1,39 @@
-var serialport = require('serialport');
-var SerialPort = serialport.SerialPort;
+const { SerialPort } = require('serialport')
+const fs = require('fs')
+const { dirname } = require('path')
+const RootFolder = dirname(require.main.filename)
 
-var COMport = "COM0";
+var PortPath = RootFolder + '/port'
+var ResetInterval = 20000;
 
-var port = new SerialPort(COMport, {
-    baudrate: 9600
-});
-
-port.on("open", () => {
-    console.log('serial port open');
-});
-
-//Send r to reset the PowerTimeout() function.
-setInterval(() => {
-    port.write('r', (err) => {
+if (fs.existsSync(PortPath)) {
+    fs.readFile(PortPath, 'utf8', (err, data) => {
         if (err) {
-            return console.log('Error on write: ', err.message);
+            console.error(err)
+            return
         }
-        console.log('message written');
-    });
-}, 20000);
+
+        var COMport = data;
+        console.log('Serial Port Set To: ' + data)
+
+        var port = new SerialPort({ path: COMport, baudRate: 9600 })
+
+        port.on("open", () => {
+            console.log('Serial Port Open');
+        });
+
+        //Send r to reset the PowerTimeout() function.
+        setInterval(() => {
+            port.write('r', (err) => {
+                if (err) {
+                    return console.log('Error on write: ', err.message);
+                } else {
+                    console.log('Reset send to serial port: ' + COMport);
+                }
+            });
+        }, ResetInterval);
+    })
+} else {
+    console.log(PortPath)
+    console.error('ERROR: Write the serial port to the "port" file!')
+}
