@@ -3,7 +3,7 @@ bool IsServerResolved =  true;
 
 void PowerTimeout() {
   if (IsServerResolved == false) {
-    //Reset server
+    //Reset server with relay connected to the motherboard's reset button pins.
     digitalWrite(Relay, HIGH);   //Turn on relay
     delay(500);
     digitalWrite(Relay, LOW);    //Turn off relay
@@ -28,7 +28,7 @@ void Serup() {
 
 void setup()
 {
-  pinMode(Relay, OUTPUT);     //Set Pin3 as output
+  pinMode(Relay, OUTPUT);
   Serial.begin(9600); // Starts the serial communication
 }
 
