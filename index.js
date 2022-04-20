@@ -26,7 +26,7 @@ if (fs.existsSync(PortPath)) {
         setInterval(() => {
             port.write('r', (err) => {
                 if (err) {
-                    return console.log('Error on write: ', err.message);
+                    console.log('Error while sending reset: ', err.message);
                 } else {
                     console.log('Reset send to serial port: ' + COMport);
                 }
