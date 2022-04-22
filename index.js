@@ -1,10 +1,10 @@
 const { SerialPort } = require('serialport')
+const { ReadlineParser } = require('@serialport/parser-readline')
 const fs = require('fs')
 const { dirname } = require('path')
 const RootFolder = dirname(require.main.filename)
 
 var PortPath = RootFolder + '/port'
-var ResetInterval = 20000;
 
 if (fs.existsSync(PortPath)) {
     fs.readFile(PortPath, 'utf8', (err, data) => {
@@ -22,16 +22,29 @@ if (fs.existsSync(PortPath)) {
             console.log('Serial Port Open');
         });
 
-        //Send r to reset the PowerTimeout() function.
-        setInterval(() => {
-            port.write('r', (err) => {
+        var parser = port.pipe(new ReadlineParser({ delimiter: '\n' }))
+        parser.on('data', (data) => {
+            if (data === "Callback") {
+                port.write('r', (err) => {
+                    if (err) {
+                        console.log('Error while sending reset: ', err.message);
+                    } else {
+                        console.log('Sending callback to serial port: ' + COMport);
+                    }
+                });
+            } else {
+                console.log(data);
+            }
+        });
+        setTimeout(function () {
+            port.write('s', (err) => {
                 if (err) {
                     console.log('Error while sending reset: ', err.message);
                 } else {
-                    console.log('Reset send to serial port: ' + COMport);
+                    console.log('Start send to serial port: ' + COMport);
                 }
             });
-        }, ResetInterval);
+        }, 2000);
     })
 } else {
     console.log(PortPath)
