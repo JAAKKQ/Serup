@@ -21,12 +21,12 @@ if (fs.existsSync(PortPath)) {
         }
 
         var COMport = data;
-        console.log('Serial Port Set To: ' + data)
+        console.log(COMport + ': Serial Port Set To: ' + data)
 
         var port = new SerialPort({ path: COMport, baudRate: 9600 })
 
         port.on("open", () => {
-            console.log('Serial Port Open');
+            console.log(COMport + ': Serial Port Open');
         });
 
         var parser = port.pipe(new ReadlineParser({ delimiter: '\n' }))
@@ -34,27 +34,31 @@ if (fs.existsSync(PortPath)) {
             if (data === "Callback") {
                 port.write('r', (err) => {
                     if (err) {
-                        console.log('Error sending callback: ', err.message);
+                        console.log(COMport + ':Error sending callback: ', err.message);
                     } else {
                         console.log(COMport + ': Callback received. Sending one back.');
                     }
                 });
             } else {
-                console.log(data);
+                if(data.includes('______')){
+                    console.log('\x1b[32m%s\x1b[0m', data);
+                } else {
+                    console.log(data);
+                }
             }
         });
         setTimeout(function () {
             port.write('s', (err) => {
                 if (err) {
-                    console.log('Error while sending reset: ', err.message);
+                    console.log(COMport + ': Error while sending reset: ', err.message);
                 } else {
                     console.log(COMport + ': Start command send.');
-                    console.log("________________________________________________________");
+                    console.log('\x1b[32m%s\x1b[0m', "________________________________________________________");
                 }
             });
         }, 2000);
     })
 } else {
     console.log(PortPath)
-    console.error('ERROR: Write the serial port to the "port" file!')
+    console.error(COMport + ': ERROR: Write the serial port to the "port" file!')
 }
