@@ -5,13 +5,13 @@
  * total_hours_wasted_here = 5
 */
 
-const { SerialPort } = require('serialport')
-const { ReadlineParser } = require('@serialport/parser-readline')
-const fs = require('fs')
-const { dirname } = require('path')
-const RootFolder = dirname(require.main.filename)
+const { SerialPort } = require('serialport');
+const { ReadlineParser } = require('@serialport/parser-readline');
+const fs = require('fs');
+const { dirname } = require('path');
+const RootFolder = dirname(require.main.filename);
 
-var PortPath = RootFolder + '/port'
+var PortPath = RootFolder + '/port.json'
 
 if (fs.existsSync(PortPath)) {
     fs.readFile(PortPath, 'utf8', (err, data) => {
@@ -19,9 +19,10 @@ if (fs.existsSync(PortPath)) {
             console.error(err)
             return
         }
+        let COMportRAW = fs.readFileSync(RootFolder + '/port.json');
+        let COMport = JSON.parse(COMportRAW).COMport;
 
-        var COMport = data;
-        console.log(COMport + ': Serial Port Set To: ' + data)
+        console.log(COMport + ': Serial Port Set')
 
         var port = new SerialPort({ path: COMport, baudRate: 9600 })
 
@@ -40,7 +41,7 @@ if (fs.existsSync(PortPath)) {
                     }
                 });
             } else {
-                if(data.includes('______')){
+                if (data.includes('______')) {
                     console.log('\x1b[32m%s\x1b[0m', data);
                 } else {
                     console.log(data);
