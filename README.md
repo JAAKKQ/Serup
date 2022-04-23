@@ -6,7 +6,7 @@ Is your server hardware so bad that your server freezes randomly? Well, don't wo
 - Linux / x64
 
 # Installation
-1. Copy the code in [Serup/arduino/sketch_apr19a/](https://github.com/JAAKKQ/Serup/blob/07c93d5679ec25326ab13663b58f0d7cb11cc6a5/arduino/sketch_apr19a/sketch_apr19a.ino) to your Arduino
+1. Copy the code in [Serup/arduino/sketch_apr19a/](https://github.com/JAAKKQ/Serup/blob/07c93d5679ec25326ab13663b58f0d7cb11cc6a5/arduino/sketch_apr19a/sketch_apr19a.ino) to your Arduino.
 2. The relay's data pin is default to pin 3 you can change it in the 8th line:
     ```JavaScript
     int Relay = 3; //Pin where relay is set
