@@ -34,7 +34,7 @@ if (fs.existsSync(PortPath)) {
             if (data === "Callback") {
                 port.write('r', (err) => {
                     if (err) {
-                        console.log(COMport + ':Error sending callback: ', err.message);
+                        console.log(COMport + ': Error sending callback: ', err.message);
                     } else {
                         console.log(COMport + ': Callback received. Sending one back.');
                     }
@@ -50,7 +50,7 @@ if (fs.existsSync(PortPath)) {
         setTimeout(function () {
             port.write('s', (err) => {
                 if (err) {
-                    console.log(COMport + ': Error while sending reset: ', err.message);
+                    console.log(COMport + ': Error while sending start: ', err.message);
                 } else {
                     console.log(COMport + ': Start command send.');
                     console.log('\x1b[32m%s\x1b[0m', "________________________________________________________");
