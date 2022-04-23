@@ -26,6 +26,7 @@ void Serup() {
       if (DoOnce) {
         DoOnce = false;
         Serial.end();
+        delay(1000);
         digitalWrite(LED_BUILTIN, HIGH);
         digitalWrite(Relay, HIGH);
         delay(200);
@@ -39,7 +40,7 @@ void Serup() {
     }
   }
   Serial.println("________________________________________________________");
-  delay(5000);
+  delay(20000);
   Serup();
 }
 
