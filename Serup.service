@@ -1,0 +1,14 @@
+[Unit]
+Description=Serup - Reboots your server when they freeze
+Documentation=https://github.com/JAAKKQ/Serup
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=15
+User=root
+ExecStart=/usr/bin/sudo /usr/bin/node /home/jaakko/Serup/
+
+[Install]
+WantedBy=multi-user.target
