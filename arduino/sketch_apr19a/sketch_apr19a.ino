@@ -1,8 +1,8 @@
 /*
- * Serup Code (Microcontroller) by Jaakko & Jummi
- * https://github.com/JAAKKQ/Serup
- * Last modified on 23th April 2022 by Jaakko & Jummi
- * total_hours_wasted_here = 5
+   Serup Code (Microcontroller) by Jaakko & Jummi
+   https://github.com/JAAKKQ/Serup
+   Last modified on 23th April 2022 by Jaakko & Jummi
+   total_hours_wasted_here = 5
 */
 
 int Relay = 3; //Pin where relay is set
@@ -16,12 +16,11 @@ void Serup() {
   int index = 0;
   Start = millis();
   while (Serial.available() > 0) {
-    char received = Serial.read();
+    Serial.read();
   }
   bool DoOnce = true;
   while (!Serial.available() > 0) {
-    Current = millis();
-    Took = Current - Start;
+    Took = millis() - Start;
     if (Took > 200) {
       Serial.println("ARDUINO: Callback took more than 200ms... Rebooting...");
       if (DoOnce) {
