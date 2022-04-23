@@ -26,9 +26,11 @@ void Serup() {
       if (DoOnce) {
         DoOnce = false;
         Serial.end();
+        digitalWrite(LED_BUILTIN, HIGH);
         digitalWrite(Relay, HIGH);
         delay(200);
         digitalWrite(Relay, LOW);
+        digitalWrite(LED_BUILTIN, LOW);
         Serial.begin(9600);
       }
     } else {
