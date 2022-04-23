@@ -1,3 +1,10 @@
+/*
+ * Serup Code (Server)
+ * https://github.com/JAAKKQ/Serup
+ * Last modified on 23th April 2022 by Jaakko & Jummi
+ * total_hours_wasted_here = 5
+*/
+
 const { SerialPort } = require('serialport')
 const { ReadlineParser } = require('@serialport/parser-readline')
 const fs = require('fs')
@@ -27,9 +34,9 @@ if (fs.existsSync(PortPath)) {
             if (data === "Callback") {
                 port.write('r', (err) => {
                     if (err) {
-                        console.log('Error while sending reset: ', err.message);
+                        console.log('Error sending callback: ', err.message);
                     } else {
-                        console.log('Sending callback to serial port: ' + COMport);
+                        console.log(COMport + ': Callback received. Sending one back.');
                     }
                 });
             } else {
@@ -41,7 +48,8 @@ if (fs.existsSync(PortPath)) {
                 if (err) {
                     console.log('Error while sending reset: ', err.message);
                 } else {
-                    console.log('Start send to serial port: ' + COMport);
+                    console.log(COMport + ': Start command send.');
+                    console.log("________________________________________________________");
                 }
             });
         }, 2000);

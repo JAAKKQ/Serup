@@ -1,3 +1,10 @@
+/*
+ * Serup Code (Microcontoller)
+ * https://github.com/JAAKKQ/Serup
+ * Last modified on 23th April 2022 by Jaakko & Jummi
+ * total_hours_wasted_here = 5
+*/
+
 int Relay = 3; //Pin where relay is set
 bool IsServerResolved =  true, IsInit = true;
 
@@ -26,10 +33,11 @@ void Serup() {
         Serial.begin(9600);
       }
     } else {
-      Serial.println("ARDUINO: Callback received and it took:");
+      Serial.write("ARDUINO: Callback received in(ms): ");
       Serial.println(Took);
     }
   }
+  Serial.println("________________________________________________________");
   delay(5000);
   Serup();
 }
