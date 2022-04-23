@@ -15,7 +15,7 @@ Is your server hardware so bad that your server freezes randomly? Well, don't wo
 4. Install needed dependencies with `npm install`
 5. Set the serial port in `port.json` file. You can get list of all available ports by running `node available`
 6. Create a systemd service so that that the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/07c93d5679ec25326ab13663b58f0d7cb11cc6a5/index.js) file is always running. You can find the exapmle service in [Serup/Serup.service](https://github.com/JAAKKQ/Serup/blob/e2e5cf2e4ccac5d5c01df65ef811d140a502ddcf/Serup.service) you should edit the third section of ExecStart to where the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/07c93d5679ec25326ab13663b58f0d7cb11cc6a5/index.js) file is located.
-7. Test if it works `sudo node index.js` If errors come up check the [subject for common errors](https://github.com/JAAKKQ/Serup/edit/main/README.md#common-errors) below.
+7. Test if it works `sudo node index.js` If errors come up check the [subject for common errors](https://github.com/JAAKKQ/Serup#common-errors) below.
 8. Now start the service: `sudo systemctl start Serup` and enable it so that it opens up after rebooting: `sudo systemctl enable Serup`
 
 # Common errors
