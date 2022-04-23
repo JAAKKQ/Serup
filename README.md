@@ -20,6 +20,6 @@ Is your server hardware so bad that your server freezes randomly? Well, don't wo
 
 # Common errors
 #### Error: Opening COM4: File not found
-The port you have set in `port.json` is wrong. Use command `node available` to get list of available ports. Pick a port that has references to your boards name E.g. Arduino
+The port you have set in `port.json` is wrong. Use command `node available` to get list of available ports. Pick a port that has references to your board's name E.g. Arduino
 #### Error: Opening COM4: Access denied
 Something is already connected to that serial port.
