@@ -1,5 +1,5 @@
 # Serup
-Is your server hardware so bad that your server freezes randomly? Well, don't worry, Serup to the rescue! Serup uses Arduino to ping every 5 seconds to your server through serial port. You need nodejs and npm to use the nodejs program that responses to the pings. If Serup does not get a response within 200ms the Arduino will close a relay which is connected to the motherboard's reset button pins. Normally the response will be received in around 9ms.
+Is your server hardware so bad that your server freezes randomly? Well, don't worry, Serup to the rescue! Serup uses Arduino to ping every 20 seconds to your server through serial port. You need nodejs and npm to use the nodejs program that responses to the pings. If Serup does not get a response within 200ms the Arduino will close a relay which is connected to the motherboard's reset button pins. Normally the response will be received in around 9ms.
 
 # Tested on:
 - Windows² / x64
