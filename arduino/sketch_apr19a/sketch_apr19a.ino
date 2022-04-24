@@ -1,9 +1,9 @@
 /*
- * Serup Code (Microcontroller) by Jaakko & Jummi
- * https://github.com/JAAKKQ/Serup
- * Last modified on 24th April 2022 by Jaakko & Jummi
- * total_hours_wasted_here = 5
- */
+   Serup Code (Microcontroller) by Jaakko & Jummi
+   https://github.com/JAAKKQ/Serup
+   Last modified on 24th April 2022 by Jaakko & Jummi
+   total_hours_wasted_here = 5
+*/
 
 // Set the correct pins for your board:
 int Relay = 3, LedBuildin = LED_BUILTIN; // Pin where relay and build in led is set
@@ -12,9 +12,9 @@ int Relay = 3, LedBuildin = LED_BUILTIN; // Pin where relay and build in led is 
 bool IsServerResolved = true, IsInit = true;
 
 /*
- * Send "Callback" to server and if you get the call back don't do anything.
- * If the callback doesn't come back within 200ms reboot the server.
- */
+   Send "Callback" to server and if you get the call back don't do anything.
+   If the callback doesn't come back within 200ms reboot the server.
+*/
 void Serup()
 {
   unsigned long Start, Current, Took;
@@ -44,10 +44,10 @@ void Serup()
         digitalWrite(LedBuildin, LOW);
         Serial.begin(9600);
         /*
-         * The loop ends here.
-         * After the server has rebooted it should start the nodejs program if properly configured on server.
-         * The program then send the s command and so start this loop again. Check loop()
-         */
+           The loop ends here.
+           After the server has rebooted it should start the nodejs program if properly configured on server.
+           The program then send the s command and so start this loop again. Check loop()
+        */
       }
     }
     else
