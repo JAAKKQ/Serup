@@ -7,10 +7,10 @@
 
 const { SerialPort } = require('serialport')
 
-console.log('\x1b[32m%s\x1b[0m', "__________________________Available Ports__________________________");
+console.log('\x1b[32m%s\x1b[0m', "-----------------Available Ports-----------------");
 SerialPort.list().then(function (ports) {
     ports.forEach(function (port) {
         console.log("Port: ", port);
     })
-    console.log('\x1b[32m%s\x1b[0m', "__________________________________________________________________");
+    console.log('\x1b[32m%s\x1b[0m', "-------------------------------------------------");
 });
