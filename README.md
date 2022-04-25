@@ -11,7 +11,7 @@ Is your server hardware so bad that your server freezes randomly? Well, don't wo
     ```JavaScript
     int Relay = 3; //Pin where relay is set
     ```
-3. Install the nodejs program by cloning this repo to your server.
+3. Install the nodejs program by cloning the main repo to your server.
 4. Install needed dependencies with `npm install`
 5. Set the serial port in `port.json` file. You can get list of all available ports by running `node available`
 6. Create a systemd service so that that the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/07c93d5679ec25326ab13663b58f0d7cb11cc6a5/index.js) file is always running. You can find the exapmle service in [Serup/Serup.service](https://github.com/JAAKKQ/Serup/blob/e2e5cf2e4ccac5d5c01df65ef811d140a502ddcf/Serup.service) you should edit the third section of ExecStart to where the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/07c93d5679ec25326ab13663b58f0d7cb11cc6a5/index.js) file is located.
