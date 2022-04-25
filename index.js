@@ -47,6 +47,8 @@ if (fs.existsSync(PortPath)) {
                 } else {
                     if (!data.includes("0ms")){
                         console.log(COMport + ': ' + data);
+                    } else {
+                        console.log(data);
                     }
                 }
             }
