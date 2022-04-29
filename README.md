@@ -7,9 +7,9 @@ Is your server hardware so bad that your server freezes randomly? Well, don't wo
 - Linux / x64
 ### Microcontroller boards
 - Arduino Uno R3
-- Joy-IT Digispark ATTINY85 (Need drivers for Windows machines)
+- Joy-IT Digispark ATTINY85 ([Digispark/readme.md](https://github.com/JAAKKQ/Serup/blob/9cc2eb3eda77c6d3fff1ad7565a52c964c34f214/readme.md))
 
-# Installation
+# Installation With Arduino
 1. Copy the code in [Serup/arduino/sketch_apr19a/](https://github.com/JAAKKQ/Serup/blob/07c93d5679ec25326ab13663b58f0d7cb11cc6a5/arduino/sketch_apr19a/sketch_apr19a.ino) to your Arduino.
 2. The relay's data pin is default to pin 3 you can change it in the 8th line:
     ```JavaScript
@@ -21,6 +21,9 @@ Is your server hardware so bad that your server freezes randomly? Well, don't wo
 6. Create a systemd service so that that the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/07c93d5679ec25326ab13663b58f0d7cb11cc6a5/index.js) file is always running. You can find the exapmle service in [Serup/Serup.service](https://github.com/JAAKKQ/Serup/blob/e2e5cf2e4ccac5d5c01df65ef811d140a502ddcf/Serup.service) you should edit the third section of ExecStart to where the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/07c93d5679ec25326ab13663b58f0d7cb11cc6a5/index.js) file is located.
 7. Test if it works `sudo node index.js` If errors come up check the [subject for common errors](https://github.com/JAAKKQ/Serup#common-errors) below.
 8. Now start the service: `sudo systemctl start Serup` and enable it so that it opens up after rebooting: `sudo systemctl enable Serup`
+
+# Installation With Digispark
+1. Go to the guide here: [Digispark/readme.md](https://github.com/JAAKKQ/Serup/blob/9cc2eb3eda77c6d3fff1ad7565a52c964c34f214/readme.md)
 
 # Common errors
 #### Error: Opening COM4: File not found
