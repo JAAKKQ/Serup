@@ -2,7 +2,7 @@
    Serup Code (Microcontroller (Digispark Edition)) by Jaakko & Jummi
    https://github.com/JAAKKQ/Serup
    Last modified on 29th April 2022 by Jaakko & Jummi
-   total_hours_wasted_here = 7
+   total_hours_wasted_here = 3
 */
 
 // Set the correct pins for your board:
