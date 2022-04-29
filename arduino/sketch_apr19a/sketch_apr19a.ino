@@ -4,13 +4,15 @@
    Last modified on 24th April 2022 by Jaakko & Jummi
    total_hours_wasted_here = 5
 */
-#include <DigiCDC.h>
 
 // Set the correct pins for your board:
 int Relay = 1; // Pin where relay and build in led is set
 
 // Global Vars
 bool IsServerResolved = true, IsInit = true;
+
+//Digispark things:
+#include <DigiCDC.h>
 
 /*
    Send "Callback" to server and if you get the call back don't do anything.
