@@ -18,7 +18,7 @@ Is your server hardware so bad that your server freezes randomly? Well, don't wo
 3. Install the nodejs program by cloning the Arduino repo to your server.
 4. Install needed dependencies with `npm install`
 5. Set the serial port in `port.json` file. You can get list of all available ports by running `node available`
-6. Create a systemd service so that that the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/Arduino/index.js) file is always running. You can find the exapmle service in [Serup/Serup.service](https://github.com/JAAKKQ/Serup/blob/Arduino/Serup.service) you should edit the third section of ExecStart to where the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/Arduino/index.js) file is located.
+6. Create a systemd service so that that the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/Arduino/index.js) file is always running. You can find the exapmle service in [Serup/Serup.service](https://github.com/JAAKKQ/Serup/blob/Arduino/Serup.service) you should edit the third section of ExecStart to where the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/Arduino/index.js) file is located on your server.
 7. Test if it works `sudo node index.js` If errors come up check the [subject for common errors](https://github.com/JAAKKQ/Serup#common-errors) below.
 8. Now start the service: `sudo systemctl start Serup` and enable it so that it opens up after rebooting: `sudo systemctl enable Serup`
 
