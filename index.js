@@ -34,18 +34,20 @@ if (fs.existsSync(PortPath)) {
         var parser = port.pipe(new ReadlineParser({ delimiter: '\n' }))
         parser.on('data', (data) => {
             if (data === "c") {
-                port.write('r', (err) => {
-                    if (err) {
-                        console.log('YOU' + ': Error sending callback: ', err.message);
-                    } else {
-                        console.log('YOU' + ': Callback received. Sending one back.');
-                    }
-                });
+                setTimeout(function () {
+                    port.write('r', (err) => {
+                        if (err) {
+                            console.log('YOU' + ': Error sending callback: ', err.message);
+                        } else {
+                            console.log('YOU' + ': Callback received. Sending one back.');
+                        }
+                    });
+                }, 10);
             } else {
                 if (data.includes('-')) {
                     console.log('\x1b[32m%s\x1b[0m', "-------------------------------------------------------");
                 } else {
-                    if (!data.includes("0ms")){
+                    if (!data.includes("0ms")) {
                         console.log(COMport + ': ' + data);
                     } else {
                         console.log(data);
