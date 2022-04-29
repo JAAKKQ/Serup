@@ -1,4 +1,4 @@
-# Installation
+# Installation With Digispark
 1. Copy the code in [Serup/Digispark/sketch_apr19a.ino](https://github.com/JAAKKQ/Serup/blob/9cc2eb3eda77c6d3fff1ad7565a52c964c34f214/arduino/sketch_apr19a/sketch_apr19a.ino) to your Digispark.
 2. The relay's data pin is default to pin 1 you can change it in the 9th line:
     ```JavaScript
