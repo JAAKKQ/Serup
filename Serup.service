@@ -1,5 +1,5 @@
 [Unit]
-Description=Serup - Reboots your server when they freeze
+Description=Serup - Reboots your server when it freeze
 Documentation=https://github.com/JAAKKQ/Serup
 After=network.target
 
