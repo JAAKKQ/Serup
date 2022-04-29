@@ -10,12 +10,12 @@ Is your server hardware so bad that your server freezes randomly? Well, don't wo
 - Joy-IT Digispark ATTINY85 ([Digispark/readme.md](https://github.com/JAAKKQ/Serup/blob/9cc2eb3eda77c6d3fff1ad7565a52c964c34f214/readme.md))
 
 # Installation With Arduino
-1. Copy the code in [Serup/arduino/sketch_apr19a/](https://github.com/JAAKKQ/Serup/blob/07c93d5679ec25326ab13663b58f0d7cb11cc6a5/arduino/sketch_apr19a/sketch_apr19a.ino) to your Arduino.
+1. Copy the code in [Serup/arduino/sketch_apr19a.ino](https://github.com/JAAKKQ/Serup/blob/07c93d5679ec25326ab13663b58f0d7cb11cc6a5/arduino/sketch_apr19a/sketch_apr19a.ino) to your Arduino.
 2. The relay's data pin is default to pin 3 you can change it in the 8th line:
     ```JavaScript
     int Relay = 3; //Pin where relay is set
     ```
-3. Install the nodejs program by cloning the main repo to your server.
+3. Install the nodejs program by cloning the Arduino repo to your server.
 4. Install needed dependencies with `npm install`
 5. Set the serial port in `port.json` file. You can get list of all available ports by running `node available`
 6. Create a systemd service so that that the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/07c93d5679ec25326ab13663b58f0d7cb11cc6a5/index.js) file is always running. You can find the exapmle service in [Serup/Serup.service](https://github.com/JAAKKQ/Serup/blob/e2e5cf2e4ccac5d5c01df65ef811d140a502ddcf/Serup.service) you should edit the third section of ExecStart to where the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/07c93d5679ec25326ab13663b58f0d7cb11cc6a5/index.js) file is located.
@@ -23,7 +23,7 @@ Is your server hardware so bad that your server freezes randomly? Well, don't wo
 8. Now start the service: `sudo systemctl start Serup` and enable it so that it opens up after rebooting: `sudo systemctl enable Serup`
 
 # Installation With Digispark
-1. Go to the guide here: [Digispark/readme.md](https://github.com/JAAKKQ/Serup/blob/9cc2eb3eda77c6d3fff1ad7565a52c964c34f214/readme.md)
+1. Go to the guide here: [Digispark/readme.md](https://github.com/JAAKKQ/Serup/blob/24ea949761b54dfb49bd9632712982f433a34b3f/readme.md)
 
 # Common errors
 #### Error: Opening COM4: File not found
