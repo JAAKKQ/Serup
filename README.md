@@ -2,8 +2,12 @@
 Is your server hardware so bad that your server freezes randomly? Well, don't worry, Serup to the rescue! Serup uses Arduino to ping every 20 seconds to your server through serial port. You need nodejs and npm to use the nodejs program that responses to the pings. If Serup does not get a response within 200ms the Arduino will close a relay which is connected to the motherboard's reset button pins. Normally the response will be received in around 9ms.
 
 # Tested on:
+### OS
 - Windows² / x64
 - Linux / x64
+### Microcontroller boards
+- Arduino Uno R3
+- Joy-IT Digispark ATTINY85 (Need drivers for Windows machines)
 
 # Installation
 1. Copy the code in [Serup/arduino/sketch_apr19a/](https://github.com/JAAKKQ/Serup/blob/07c93d5679ec25326ab13663b58f0d7cb11cc6a5/arduino/sketch_apr19a/sketch_apr19a.ino) to your Arduino.
