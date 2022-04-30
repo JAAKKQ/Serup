@@ -7,7 +7,7 @@ Is your server hardware so bad that your server freezes randomly? Well, don't wo
 - Linux / x64
 ### Microcontroller boards
 - Arduino Uno R3
-- Joy-IT Digispark ATTINY85 ([Digispark/readme.md](https://github.com/JAAKKQ/Serup/blob/Digispark/README.md))
+- Joy-IT Digispark ATTINY85 ([Digispark/README.md](https://github.com/JAAKKQ/Serup/blob/Digispark/README.md))
 
 # Installation With Arduino
 1. Copy the code in [Serup/arduino/sketch_apr19a.ino](https://github.com/JAAKKQ/Serup/blob/Arduino/arduino/sketch_apr19a/sketch_apr19a.ino) to your Arduino.
@@ -23,7 +23,7 @@ Is your server hardware so bad that your server freezes randomly? Well, don't wo
 8. Now start the service: `sudo systemctl start Serup` and enable it so that it opens up after rebooting: `sudo systemctl enable Serup`
 
 # Installation With Digispark
-1. Go to the guide here: [Digispark/readme.md](https://github.com/JAAKKQ/Serup/blob/Digispark/README.md)
+1. Go to the guide here: [Digispark/README.md](https://github.com/JAAKKQ/Serup/blob/Digispark/README.md)
 
 # Common errors
 #### Error: Opening COM4: File not found
