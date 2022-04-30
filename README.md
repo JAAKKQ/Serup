@@ -13,3 +13,5 @@ The response time should be expected to be 5ms but it can be higher. The relay w
 6. Create a systemd service so that that the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/36ca9b89a94d03b8ee28af13ca9a03aace742f46/index.js) file is always running. You can find the exapmle service in [Serup/Serup.service](https://github.com/JAAKKQ/Serup/blob/36ca9b89a94d03b8ee28af13ca9a03aace742f46/Serup.service) you should edit the third section of ExecStart to where the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/36ca9b89a94d03b8ee28af13ca9a03aace742f46/index.js) file is located.
 7. Test if it works `sudo node index.js` If errors come up check the [subject for common errors](https://github.com/JAAKKQ/Serup#common-errors) below.
 8. Now start the service: `sudo systemctl start Serup` and enable it so that it opens up after rebooting: `sudo systemctl enable Serup`
+
+NoiS
