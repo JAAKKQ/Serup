@@ -26,9 +26,9 @@ Is your server hardware so bad that your server freezes randomly? Well, don't wo
 1. Go to the guide here: [Digispark/readme.md](https://github.com/JAAKKQ/Serup/blob/Digispark/readme.md)
 
 # Common errors
-#### Error: Opening COM4: File not found
+#### Error: Opening /dev/ttyACM0: File not found
 The port you have set in `port.json` is wrong. Use command `node available` to get list of available ports. Pick a port that has references to your board's name E.g. Arduino
-#### Error: Opening COM4: Access denied
+#### Error: Opening /dev/ttyACM0: Access denied
 Something is already connected to that serial port.
 #### Error: Permission denied, cannot open /dev/ttyACM0
 Index.js is not started with root access
