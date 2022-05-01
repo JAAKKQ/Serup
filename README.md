@@ -1,5 +1,5 @@
 # Serup
-Is your server hardware so bad that your server freezes randomly? Well, don't worry, Serup to the rescue! Serup uses Arduino to ping every 20 seconds to your server through serial port. You need nodejs and npm to use the nodejs program that responses to the pings. If Serup does not get a response within 200ms the Arduino will close a relay which is connected to the motherboard's reset button pins. Normally the response will be received in around 7ms.
+Serup uses Arduino to ping every 20 seconds to your server through serial port. You need nodejs and npm to use the nodejs program that responses to the pings. If Serup does not get a response within 200ms (1000ms on Digispark ATTINY85) the Arduino will close a relay which is connected to the motherboard's reset button pins. Normally the response will be received in around 7ms.
 
 # Tested on:
 ### OS
@@ -22,7 +22,7 @@ Is your server hardware so bad that your server freezes randomly? Well, don't wo
 7. Test if it works `sudo node index.js` If errors come up check the [subject for common errors](https://github.com/JAAKKQ/Serup#common-errors) below.
 8. Now start the service: `sudo systemctl start Serup` and enable it so that it opens up after rebooting: `sudo systemctl enable Serup`
 
-# Installation With Digispark
+# Installation With Digispark ATTINY85
 1. Go to the guide here: [Digispark/README.md](https://github.com/JAAKKQ/Serup/blob/Digispark/README.md)
 
 # Common errors
