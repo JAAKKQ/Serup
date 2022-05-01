@@ -28,6 +28,9 @@ module.exports = function (COMport) {
         took: function (data) {
             console.log(COMport + ': ' + data);
 		},
+
+        otherData: function (data) {
+		},
         
         start: function () {
             console.log('YOU' + ': Start command send.');

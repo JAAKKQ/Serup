@@ -50,6 +50,8 @@ if (fs.existsSync(PortPath)) {
                 } else {
                     if (!data.includes("0ms")) {
                         logHandler.took(data);
+                    } else {
+                        logHandler.otherData(data);
                     }
                 }
             }
