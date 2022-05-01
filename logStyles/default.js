@@ -27,23 +27,24 @@ module.exports = function (COMport) {
 
         took: function (data) {
             if (data > 7) {
-                console.log(COMport + ': Callback received in(ms): ' + data);
+                console.log(COMport + ': Waiting callback for(ms): ' + data);
             }
         },
 
         uptime: function (data) {
-            console.log('Uptime: ' + data);
-        },
-
-        sendCall: function (data) {
-            console.log('YOU: ' + "Sending Callback...");
-        },
-
-        reboot: function (data) {
             console.log('Uptime(ms): ' + data);
         },
 
+        sendCall: function (data) {
+            console.log(COMport + ": Sending Callback...");
+        },
+
+        reboot: function () {
+            console.log("Reboot!");
+        },
+
         everything: function (data) {
+            //Everything in ever send raw from the board.
         },
 
         start: function () {
