@@ -3,6 +3,8 @@
    https://github.com/JAAKKQ/Serup
    Last modified on 24th April 2022 by Jaakko & Jummi
    total_hours_wasted_here = 5
+   Copyright (c) 2022 Jaakko & Jummi
+   MIT License
 */
 
 // Set the correct pins for your board:

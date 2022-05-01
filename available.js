@@ -3,6 +3,8 @@
  * https://github.com/JAAKKQ/Serup
  * Last modified on 23th April 2022 by Jaakko & Jummi
  * total_hours_wasted_here = 0
+ * Copyright (c) 2022 Jaakko & Jummi
+ * MIT License
 */
 
 const { SerialPort } = require('serialport')
