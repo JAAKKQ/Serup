@@ -3,6 +3,8 @@
  * https://github.com/JAAKKQ/Serup
  * Last modified on 24th April 2022 by Jaakko & Jummi
  * total_hours_wasted_here = 5
+ * Copyright (c) 2022 Jaakko & Jummi
+ * MIT License
 */
 
 const { SerialPort } = require('serialport');
@@ -45,7 +47,7 @@ if (fs.existsSync(PortPath)) {
                 if (data.includes('-')) {
                     console.log('\x1b[32m%s\x1b[0m', "-------------------------------------------------------");
                 } else {
-                    if (!data.includes("0ms")){
+                    if (!data.includes("0ms")) {
                         console.log(COMport + ': ' + data);
                     }
                 }
