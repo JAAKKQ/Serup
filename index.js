@@ -62,7 +62,7 @@ if (fs.existsSync(PortPath)) {
             }
             if (data.includes("e:")) {
                 var uptime = data.replace(/^\D+/g, '');
-                logHandler.start(uptime);
+                logHandler.uptime(uptime);
             }
             if (data.includes("f:")) {
                 logHandler.startReceived();

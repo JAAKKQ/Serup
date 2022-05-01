@@ -36,11 +36,11 @@ module.exports = function (COMport) {
         },
 
         sendCall: function (data) {
-            console.log('YOU: ' + "Sending Callback");
+            console.log('YOU: ' + "Sending Callback...");
         },
 
         reboot: function (data) {
-            console.log('Uptime: ' + data);
+            console.log('Uptime(ms): ' + data);
         },
 
         everything: function (data) {
