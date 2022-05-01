@@ -23,14 +23,15 @@ if (fs.existsSync(PortPath)) {
         }
         let COMportRAW = fs.readFileSync(RootFolder + '/port.json');
         let COMport = JSON.parse(COMportRAW).COMport;
-
-        console.log('\x1b[32m%s\x1b[0m', "-------------------------Serup-------------------------");
-        console.log('YOU' + ': Serial Port Set')
+        let logStyle = JSON.parse(COMportRAW).logStyle;
+        
+        const logHandler = require(RootFolder + '/logStyles/' + logStyle + '.js')(COMport);
+        logHandler.init();
 
         var port = new SerialPort({ path: COMport, baudRate: 9600 })
 
         port.on("open", () => {
-            console.log('YOU' + ': Serial Port Open');
+            logHandler.portOpen();
         });
 
         var parser = port.pipe(new ReadlineParser({ delimiter: '\n' }))
@@ -38,17 +39,17 @@ if (fs.existsSync(PortPath)) {
             if (data === "c") {
                 port.write('r', (err) => {
                     if (err) {
-                        console.log('YOU' + ': Error sending callback: ', err.message);
+                        logHandler.callSendError(err.message);
                     } else {
-                        console.log('YOU' + ': Callback received. Sending one back.');
+                        logHandler.callSend();
                     }
                 });
             } else {
                 if (data.includes('-')) {
-                    console.log('\x1b[32m%s\x1b[0m', "-------------------------------------------------------");
+                    logHandler.divider();
                 } else {
                     if (!data.includes("0ms")) {
-                        console.log(COMport + ': ' + data);
+                        logHandler.took(data);
                     }
                 }
             }
@@ -56,9 +57,9 @@ if (fs.existsSync(PortPath)) {
         setTimeout(function () {
             port.write('s', (err) => {
                 if (err) {
-                    console.log('YOU' + ': Error while sending start: ', err.message);
+                    logHandler.startError(err.message);
                 } else {
-                    console.log('YOU' + ': Start command send.');
+                    logHandler.start();
                 }
             });
         }, 2000);

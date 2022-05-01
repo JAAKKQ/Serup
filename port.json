@@ -1,3 +1,4 @@
 {
-    "COMport": "/dev/ttyACM0"
+    "COMport": "COM4",
+    "logStyle": "default"
 }
