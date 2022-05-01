@@ -14,7 +14,7 @@ module.exports = function (COMport) {
         },
 
         callSend: function () {
-            console.log('YOU' + ': Callback received. Sending one back.');
+            console.log('YOU' + ': Callback received... Sending one back...');
         },
 
         callSendError: function (Err) {
@@ -26,14 +26,32 @@ module.exports = function (COMport) {
         },
 
         took: function (data) {
-            console.log(COMport + ': ' + data);
+            if (data > 7) {
+                console.log(COMport + ': Callback received in(ms): ' + data);
+            }
         },
 
-        otherData: function (data) {
+        uptime: function (data) {
+            console.log('Uptime: ' + data);
+        },
+
+        sendCall: function (data) {
+            console.log('YOU: ' + "Sending Callback");
+        },
+
+        reboot: function (data) {
+            console.log('Uptime: ' + data);
+        },
+
+        everything: function (data) {
         },
 
         start: function () {
             console.log('YOU' + ': Start command send.');
+        },
+
+        startReceived: function () {
+            console.log(COMport + ': Start command received.');
         },
 
         startError: function (Err) {

@@ -1,7 +1,7 @@
 /*
-   Serup Code (Microcontroller) by Jaakko & Jummi
+   Serup Code (Microcontroller (Arduino Uno Edition)) by Jaakko & Jummi
    https://github.com/JAAKKQ/Serup
-   Last modified on 24th April 2022 by Jaakko & Jummi
+   Last modified on 1th May 2022 by Jaakko & Jummi
    total_hours_wasted_here = 5
    Copyright (c) 2022 Jaakko & Jummi
    MIT License
@@ -20,7 +20,7 @@ bool IsServerResolved = true, IsInit = true;
 void Serup()
 {
   unsigned long Start, Current, Took;
-  Serial.write("Sending Callback\n");
+  Serial.println(F("a:"));
   Serial.write("c\n"); // Send "Callback" to the nodejs program. After program receives Callback it will send "r" through serial port.
   Start = millis();
   while (Serial.available() > 0)
@@ -36,7 +36,7 @@ void Serup()
       if (DoOnce)
       {
         DoOnce = false;
-        Serial.println("Callback took more than 200ms. Rebooted or rebooting...");
+        Serial.println(F("b:"));
         Serial.end();
         delay(2000);
         digitalWrite(LedBuildin, HIGH);
@@ -54,15 +54,13 @@ void Serup()
     }
     else
     {
-      Serial.print("Callback received in: ");
-      Serial.print(Took);
-      Serial.write("ms\n");
+      Serial.print(F("d:"));
+      Serial.println(Took);
     }
   }
-  Serial.print("Uptime ");
-  Serial.print(millis());
-  Serial.println("ms");
-  Serial.println("-");
+  Serial.print(F("e:"));
+  Serial.println(millis());
+  Serial.println(F("-"));
   delay(20000);
   Serup();
 }
@@ -83,8 +81,8 @@ void loop()
     // Run Serup() loop if s is received.
     if (received == 's')
     {
-      Serial.write("Start command received.\n");
-      Serial.println("-");
+      Serial.println(F("f:"));
+      Serial.println(F("-"));
       delay(2000);
       Serup();
     }
