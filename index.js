@@ -91,7 +91,7 @@ function execute() {
         };
         fs.writeFile(PortPath, JSON.stringify(base), function (err) {
             if (err) throw err;
-            console.log('Please configure the port.json file with your desired serial port!');
+            console.log('Please configure the port.json file with your desired serial port! Use command node available to get list of available serial ports.');
         });
     }
 }
