@@ -27,7 +27,7 @@ Serup uses microcontroller board to ping every 20 seconds to your server through
 
 # Common errors
 #### Error: Opening /dev/ttyACM0: File not found
-The port you have set in `port.json` is wrong. Use command `node available` to get list of available ports. Pick a port that has references to your board's name E.g. Arduino
+The port you have set in `port.json` is not available. Use command `node available` to get list of available ports. Pick a port that has references to your board's name E.g. Arduino
 #### Error: Opening /dev/ttyACM0: Access denied
 Something is already connected to that serial port.
 #### Error: Permission denied, cannot open /dev/ttyACM0
