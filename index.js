@@ -54,7 +54,7 @@ if (fs.existsSync(PortPath)) {
                             logHandler.callSend();
                         }
                     });
-                }, 2);
+                }, 10);
             }
             if (data.includes("d:")) {
                 var took = data.replace(/^\D+/g, '');

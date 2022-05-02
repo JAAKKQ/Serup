@@ -31,7 +31,7 @@ void Serup()
   while (!Serial.available() > 0)
   {
     Took = millis() - Start;
-    if (Took > 200)
+    if (Took > 100)
     {
       if (DoOnce)
       {

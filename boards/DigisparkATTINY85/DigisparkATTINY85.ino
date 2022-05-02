@@ -33,12 +33,12 @@ void Serup()
   while (!SerialUSB.available() > 0)
   {
     Took = millis() - Start;
-    if (Took > 1000)
+    if (Took > 100)
     {
       if (DoOnce)
       {
         DoOnce = false;
-        SerialUSB.println(F("Rebo"));
+        SerialUSB.println(F("b:"));
         SerialUSB.end();
         delay(2000);
         digitalWrite(Relay, HIGH);
@@ -54,8 +54,8 @@ void Serup()
     }
     else
     {
-      SerialUSB.print(Took);
-      SerialUSB.println(F("ms\n"));
+      SerialUSB.print(F("d:"));
+      SerialUSB.println(Took);
     }
   }
   SerialUSB.println(F("-"));
