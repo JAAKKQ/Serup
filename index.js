@@ -58,6 +58,7 @@ if (fs.existsSync(PortPath)) {
             }
             if (data.includes("d:")) {
                 var took = data.replace(/^\D+/g, '');
+                console.log(took);
                 logHandler.took(took);
             }
             if (data.includes("e:")) {
