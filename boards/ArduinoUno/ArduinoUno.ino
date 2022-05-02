@@ -1,7 +1,7 @@
 /*
    Serup Code (Microcontroller (Arduino Uno Edition)) by Jaakko & Jummi
    https://github.com/JAAKKQ/Serup
-   Last modified on 1th May 2022 by Jaakko & Jummi
+   Last modified on 2th May 2022 by Jaakko & Jummi
    total_hours_wasted_here = 5
    Copyright (c) 2022 Jaakko & Jummi
    MIT License

@@ -1,3 +1,13 @@
+/*
+ * Default log style for Serup by Jaakko & Jummi
+ * Create your own style by making a new file and setting the logStyle value to your style file's name in the port.json file.
+ * 
+ * https://github.com/JAAKKQ/Serup
+ * total_hours_wasted_here = 1
+ * Copyright (c) 2022 Jaakko & Jummi
+ * MIT License
+*/
+
 var COMport = "";
 
 module.exports = function (COMport) {
