@@ -1,29 +1,29 @@
 # Serup
-Serup uses Arduino to ping every 20 seconds to your server through serial port. You need nodejs and npm to use the nodejs program that responses to the pings. If Serup does not get a response within 200ms (1000ms on Digispark ATTINY85) the Arduino will close a relay which is connected to the motherboard's reset button pins. Normally the response will be received in around 7ms.
+Serup uses microcontroller board to ping every 20 seconds to your server through serial port. You need nodejs and npm to use the nodejs program that responses to the pings. If Serup does not get a response within 100ms the microcontroller board will close a relay which is connected to the motherboard's reset button pins.
 
 # Tested on:
 ### OS
 - Windows² / x64
 - Linux / x64
 ### Microcontroller boards
-- Arduino Uno R3
-- Joy-IT Digispark ATTINY85 ([Digispark/README.md](https://github.com/JAAKKQ/Serup/blob/Digispark/README.md))
+- Arduino Uno R3 ([Serup/boards/ArduinoUno](https://github.com/JAAKKQ/Serup/blob/main/boards/ArduinoUno))
+- Joy-IT Digispark ATTINY85 ([Serup/boards/DigisparkATTINY85](https://github.com/JAAKKQ/Serup/blob/main/boards/DigisparkATTINY85))
 
-# Installation With Arduino
-1. Copy the code in [Serup/arduino/sketch_apr19a.ino](https://github.com/JAAKKQ/Serup/blob/Arduino/arduino/sketch_apr19a/sketch_apr19a.ino) to your Arduino.
-2. The relay's data pin is default to pin 3 you can change it in the 8th line:
+# Installation
+1. Get the right code for your board from [Serup/boards/](https://github.com/JAAKKQ/Serup/blob/main/boards/) and copy paste that to your board.
+2. The relay's data pin is default to pin 3 you can change it in the 11th line:
     ```JavaScript
-    int Relay = 3; //Pin where relay is set
+    int Relay = 3, LedBuildin = LED_BUILTIN; // Pin where relay and build in led is set
     ```
-3. Install the nodejs program by cloning the Arduino repo to your server.
-4. Install needed dependencies with `npm install`
-5. Set the serial port in `port.json` file. You can get list of all available ports by running `node available`
-6. Create a systemd service so that that the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/Arduino/index.js) file is always running. You can find the exapmle service in [Serup/Serup.service](https://github.com/JAAKKQ/Serup/blob/Arduino/Serup.service) you should edit the third section of ExecStart to where the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/Arduino/index.js) file is located on your server.
-7. Test if it works `sudo node index.js` If errors come up check the [subject for common errors](https://github.com/JAAKKQ/Serup#common-errors) below.
-8. Now start the service: `sudo systemctl start Serup` and enable it so that it opens up after rebooting: `sudo systemctl enable Serup`
-
-# Installation With Digispark ATTINY85
-1. Go to the guide here: [Digispark/README.md](https://github.com/JAAKKQ/Serup/blob/Digispark/README.md)
+3. Install the nodejs program by cloning the main repo to your server.
+4. Install needed dependencies with `npm i` on Linux use `sudo npm i` inside the folder you cloned the repo.
+5. Run the nodejs program ones so that the port.json file gets created.
+6. Find your serial port path by using command `node available` inside the folder you cloned the repo.
+7. Set the serial port path to the port.json file. In the section named "COMport"
+8. Now try if everything works by using command `sudo node index` inside the folder you cloned the repo. If errors come up check the [subject for common errors](https://github.com/JAAKKQ/Serup#common-errors) below.
+9. Create a systemd service so that that the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/main/index.js) file is always running with root access. You can find the example service in [Serup/Serup.service](https://github.com/JAAKKQ/Serup/blob/main/Serup.service) you should edit the third section of ExecStart to where the [Serup/index.js](https://github.com/JAAKKQ/Serup/blob/main/index.js) file is located on your server.
+10. Now start the service: `sudo systemctl start Serup` and enable it so that it opens up after rebooting: `sudo systemctl enable Serup`
+11. Serup is now ready for work! If you need help just create a [issue](https://github.com/JAAKKQ/Serup/issues/new).
 
 # Common errors
 #### Error: Opening /dev/ttyACM0: File not found
