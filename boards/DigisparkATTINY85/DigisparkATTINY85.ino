@@ -79,7 +79,7 @@ void loop()
     SerialUSB.println(received);
     if (received == 's')
     {
-      SerialUSB.println(F("Start command received."));
+      SerialUSB.println(F("f:"));
       SerialUSB.println(F("-"));
       delay(2000);
       Serup();
