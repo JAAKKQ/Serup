@@ -1,3 +1,13 @@
+/*
+ * Default log style for Serup by Jaakko & Jummi
+ * Create your own style by making a new file and setting the logStyle value to your style file's name in the port.json file.
+ * 
+ * https://github.com/JAAKKQ/Serup
+ * total_hours_wasted_here = 1
+ * Copyright (c) 2022 Jaakko & Jummi
+ * MIT License
+*/
+
 var COMport = "";
 
 module.exports = function (COMport) {
@@ -14,7 +24,7 @@ module.exports = function (COMport) {
         },
 
         callSend: function () {
-            console.log('YOU' + ': Callback received. Sending one back.');
+            console.log('YOU' + ': Callback received... Sending one back...');
         },
 
         callSendError: function (Err) {
@@ -26,14 +36,31 @@ module.exports = function (COMport) {
         },
 
         took: function (data) {
-            console.log(COMport + ': ' + data);
+            console.log(COMport + ': Waiting callback for: ' + parseInt(data) + " ms");
         },
 
-        otherData: function (data) {
+        uptime: function (data) {
+            console.log('Uptime(ms): ' + data);
+        },
+
+        sendCall: function (data) {
+            console.log(COMport + ": Sending Callback...");
+        },
+
+        reboot: function () {
+            console.log("Reboot!");
+        },
+
+        everything: function (data) {
+            //Everything in ever send raw from the board.
         },
 
         start: function () {
             console.log('YOU' + ': Start command send.');
+        },
+
+        startReceived: function () {
+            console.log(COMport + ': Start command received.');
         },
 
         startError: function (Err) {
