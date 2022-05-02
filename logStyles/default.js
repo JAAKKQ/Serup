@@ -27,7 +27,7 @@ module.exports = function (COMport) {
 
         took: function (data) {
             if (data > 7) {
-                console.log(COMport + ': Waiting callback for: ' + parseInt(data) + " ms");
+                console.log(COMport + ': Waiting callback for: ' + data);
             }
         },
 
