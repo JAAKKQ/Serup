@@ -3,7 +3,7 @@ Serup uses microcontroller board to ping every 20 seconds to your server through
 
 # Tested on:
 ### OS
-- Windows² / x64 (Only works with Arduino. Need drivers for Digispark every driver I found were outdated.)
+- Windows² / x64 (Only works with Arduino. Need drivers for Digispark, every driver I found were outdated.)
 - Linux / x64
 ### Microcontroller boards
 - Arduino Uno R3 ([Serup/boards/ArduinoUno](https://github.com/JAAKKQ/Serup/blob/main/boards/ArduinoUno))
