@@ -26,7 +26,7 @@ module.exports = function (COMport) {
         },
 
         took: function (data) {
-            console.log(COMport + ': Waiting callback for: ' + data);
+            console.log(COMport + ': Waiting callback for: ' + parseInt(data) + " ms");
         },
 
         uptime: function (data) {
