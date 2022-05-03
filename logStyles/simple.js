@@ -18,7 +18,7 @@ var uptimeGlobal = 0;
 var doOnce = true;
 
 setInterval(() => {
-    Report()
+    Report();
 }, 900000);
 
 function Report() {
