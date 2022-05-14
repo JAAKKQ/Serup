@@ -58,6 +58,7 @@ void Serup()
       SerialUSB.println(Took);
     }
   }
+  Serial.println(F("g:"));
   SerialUSB.println(F("-"));
   delay(20000);
   Serup();
