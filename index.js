@@ -73,6 +73,9 @@ function execute() {
                 if (data.includes("-")) {
                     logHandler.divider();
                 }
+                if (data.includes("g:")) {
+                    logHandler.finish();
+                }
             });
             setTimeout(function () {
                 port.write('s', (err) => {

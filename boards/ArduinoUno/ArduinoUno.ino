@@ -60,6 +60,7 @@ void Serup()
   }
   Serial.print(F("e:"));
   Serial.println(millis());
+  Serial.println(F("g:"));
   Serial.println(F("-"));
   delay(20000);
   Serup();
