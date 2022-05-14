@@ -10,6 +10,8 @@
 
 var COMport = "";
 var lastTook = 0;
+var upTime = 0;
+var CurrentCall = 0;
 
 module.exports = function (COMport) {
     return {
@@ -39,6 +41,8 @@ module.exports = function (COMport) {
         finish: function () {
             //Executes at the end of the Serup() loop
             console.log(COMport + ': Callback took: ' + lastTook + " ms");
+            console.log('Uptime(ms): ' + upTime);
+            console.log('\x1b[32m%s\x1b[0m', "-------------------------------------------------------");
         },
 
         divider: function () {
@@ -53,7 +57,7 @@ module.exports = function (COMport) {
 
         uptime: function (data) {
             //Executes when board has send the uptime to this program
-            console.log('Uptime(ms): ' + data);
+            upTime = data;
         },
 
         sendCall: function (data) {
@@ -78,6 +82,7 @@ module.exports = function (COMport) {
         startReceived: function () {
             //Executed when board has received start command
             console.log(COMport + ': Start command received.');
+            console.log('\x1b[32m%s\x1b[0m', "-------------------------------------------------------");
         },
 
         startError: function (Err) {

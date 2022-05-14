@@ -8,7 +8,7 @@
 */
 
 // Set the correct pins for your board:
-int Relay = 1; // Pin where relay and build in led is set
+#define Relay 1 // Pin where relay and build in led is set
 
 // Global Vars
 bool IsServerResolved = true, IsInit = true;
@@ -58,8 +58,7 @@ void Serup()
       SerialUSB.println(Took);
     }
   }
-  Serial.println(F("g:"));
-  SerialUSB.println(F("-"));
+  SerialUSB.println(F("g:"));
   delay(20000);
   Serup();
 }
@@ -77,11 +76,9 @@ void loop()
   {
     char received = SerialUSB.read();
     // Run Serup() loop if s is received.
-    SerialUSB.println(received);
     if (received == 's')
     {
       SerialUSB.println(F("f:"));
-      SerialUSB.println(F("-"));
       delay(2000);
       Serup();
     }
