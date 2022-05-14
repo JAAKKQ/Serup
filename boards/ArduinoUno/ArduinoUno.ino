@@ -8,7 +8,8 @@
 */
 
 // Set the correct pins for your board:
-int Relay = 3, LedBuildin = LED_BUILTIN; // Pin where relay and build in led is set
+#define Relay 3
+#define LedBuildin LED_BUILTIN // Pin where relay and build in led is set
 
 // Global Vars
 bool IsServerResolved = true, IsInit = true;
@@ -61,7 +62,6 @@ void Serup()
   Serial.print(F("e:"));
   Serial.println(millis());
   Serial.println(F("g:"));
-  Serial.println(F("-"));
   delay(20000);
   Serup();
 }
@@ -83,7 +83,6 @@ void loop()
     if (received == 's')
     {
       Serial.println(F("f:"));
-      Serial.println(F("-"));
       delay(2000);
       Serup();
     }
