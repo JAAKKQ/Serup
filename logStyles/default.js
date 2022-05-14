@@ -9,6 +9,7 @@
 */
 
 var COMport = "";
+var lastTook = 0;
 
 module.exports = function (COMport) {
     return {
@@ -35,6 +36,11 @@ module.exports = function (COMport) {
             console.log('YOU' + ': Error sending callback: ', Err);
         },
 
+        finish: function () {
+            //Executes at the end of the Serup() loop
+            console.log(COMport + ': Callback took: ' + lastTook + " ms");
+        },
+
         divider: function () {
             //Executes when all data received from board has come
             console.log('\x1b[32m%s\x1b[0m', "-------------------------------------------------------");
@@ -42,7 +48,7 @@ module.exports = function (COMport) {
 
         took: function (data) {
             //May execute multiple times while wating for response from this program
-            console.log(COMport + ': Waiting callback for: ' + parseInt(data) + " ms");
+            lastTook = parseInt(data);
         },
 
         uptime: function (data) {
